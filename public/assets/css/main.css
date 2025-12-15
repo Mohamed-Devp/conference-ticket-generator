@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    /* Colors */
+    --neutral-0: 0 0% 100%;
+    --neutral-300: 252 6% 83%;
+    --neutral-500: 245 15% 58%;
+    --neutral-700: 245 19% 35%;
+    --neutral-900: 248 70% 10%;
+
+    --orange-500: 7 88% 67%;
+    --orange-700: 7 71% 60%;
+
+    --text-gradient: linear-gradient(to right, hsl(7 68% 67%), hsl(0 0% 100%));
+
+    /* Typography */
+    --font-family-primary: "Inconsolata";
+
+    --font-weight-primary-regular: 400;
+    --font-weight-primary-medium: 500;
+    --font-weight-primary-bold: 700;
+    --font-weight-primary-extrabold: 800;
+}
+
+/*
+  ==============================
+  RESET & BASE
+  ==============================
+*/
+html {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: initial;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding: 3rem 0;
+    font-family: var(--font-family-primary);
+    background-image: url("../images/pattern-lines.svg"), url("../images/background-desktop.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    display: block;
+    object-fit: contain;
+}
+
+/*
+  ==============================
+  UTILITY STYLES
+  ==============================
+*/
+.visually-hidden { /* Hides the element visually */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: initial;
+    pointer-events: none;
+    clip-path: inset(100%);
+}
+
+/*
+  ==============================
+  BACKGROUND PATTERNS
+  ==============================
+*/
+.bg-pattern {
+    position: absolute;
+    z-index: -1;
+    object-fit: contain;
+}
+
+.bg-pattern--squiggly-line-top {
+    right: 0;
+    top: 6rem;
+}
+
+.bg-pattern--squiggly-line-bottom {
+    left: 0;
+    bottom: 0;
+}
+
+.bg-pattern--circle-1 {
+    left: 3rem;
+    top: 0;
+    transform: translateY(-40%);
+}
+
+.bg-pattern--circle-2 {
+    top: 50%;
+    left: 65%;
+}
+
+/*
+  ==============================
+  SITE HEADER
+  ==============================
+*/
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.site-header__heading {
+    width: 52rem;
+    margin-top: 4rem;
+    font-size: 3.75rem;
+    font-weight: var(--font-weight-primary-extrabold);
+    color: hsl(var(--neutral-0));
+}
+
+.site-header__content {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-primary-medium);
+    color: hsl(var(--neutral-300));
+}
