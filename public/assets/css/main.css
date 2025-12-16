@@ -16,10 +16,28 @@
     /* Typography */
     --font-family-primary: "Inconsolata";
 
+    --font-size-heading-lg: 6.0rem;
+    --font-size-heading-sm: 4.0rem;
+
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.8rem;
+    --font-size-lg: 2.0rem;
+    --font-size-xl: 2.4rem;
+
     --font-weight-primary-regular: 400;
     --font-weight-primary-medium: 500;
     --font-weight-primary-bold: 700;
     --font-weight-primary-extrabold: 800;
+
+    /* Spacing */
+    --spacing-1: 0.8rem;
+    --spacing-2: 1.6rem;
+    --spacing-3: 1.8rem;
+    --spacing-4: 2.0rem;
+    --spacing-5: 2.4rem;
+    --spacing-6: 3.2rem;
+    --spacing-7: 4.8rem;
+    --spacing-8: 6.4rem;
 }
 
 /*
@@ -28,6 +46,7 @@
   ==============================
 */
 html {
+    font-size: 10px;
     box-sizing: border-box;
 }
 
@@ -52,7 +71,7 @@ html {
 body {
     position: relative;
     min-height: 100vh;
-    padding: 3rem 0;
+    padding: var(--spacing-7) 0;
     font-family: var(--font-family-primary);
     background-image: url("../images/pattern-lines.svg"), url("../images/background-desktop.png");
     background-position: center;
@@ -92,24 +111,28 @@ img {
 }
 
 .bg-pattern--squiggly-line-top {
+    width: min(446px, 50vw);
     right: 0;
-    top: 6rem;
+    top: 96px;
 }
 
 .bg-pattern--squiggly-line-bottom {
+    width: min(826px, 90vw);
     left: 0;
     bottom: 0;
 }
 
 .bg-pattern--circle-1 {
-    left: 3rem;
+    width: min(218px, 30vw);
+    left: 48px;
     top: 0;
     transform: translateY(-40%);
 }
 
 .bg-pattern--circle-2 {
-    top: 50%;
-    left: 65%;
+    width: min(218px, 30vw);
+    right: 25%;
+    bottom: 30%;
 }
 
 /*
@@ -125,16 +148,32 @@ img {
 }
 
 .site-header__heading {
-    width: 52rem;
-    margin-top: 4rem;
-    font-size: 3.75rem;
+    width: min(83.2rem, 90vw);
+    margin-top: var(--spacing-8);
+    font-size: var(--font-size-heading-lg);
     font-weight: var(--font-weight-primary-extrabold);
     color: hsl(var(--neutral-0));
 }
 
 .site-header__content {
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
+    width: 90vw;
+    margin-top: var(--spacing-5);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-primary-medium);
     color: hsl(var(--neutral-300));
+}
+
+/*
+  ==============================
+  MEDIA QUERIES
+  ==============================
+*/
+@media (max-width: 576px) {
+    .site-header__heading {
+        font-size: var(--font-size-heading-sm);
+    }
+
+    .site-header__content {
+        font-size: var(--font-size-lg);
+    }
 }

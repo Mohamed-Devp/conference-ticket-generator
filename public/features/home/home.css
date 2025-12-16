@@ -4,7 +4,7 @@
   ==============================
 */
 label {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-primary-medium);
     color: hsl(var(--neutral-0));
 }
@@ -12,11 +12,11 @@ label {
 input {
     display: block;
     width: 100%;
-    padding: 1.125rem 1.25rem;
+    padding: var(--spacing-3) var(--spacing-4);
     border: 2px solid hsl(var(--neutral-500));
-    border-radius: 0.75rem;
+    border-radius: 12px;
     font-family: inherit;
-    font-size: 1.125rem;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-primary-regular);
     color: hsl(var(--neutral-300));
 }
@@ -42,13 +42,13 @@ input::placeholder {
 .user-info {
     display: flex;
     flex-direction: column;
-    width: 30rem;
-    gap: 2rem;
-    padding: 3rem 0;
+    width: min(48.0rem, 90vw);
+    gap: var(--spacing-6);
+    padding: var(--spacing-7) 0;
 }
 
 input, .drop-zone {
-    margin-top: 1rem;
+    margin-top: var(--spacing-2);
     background-color: hsl(var(--neutral-700) / 0.25);
     backdrop-filter: blur(2px);
     transition: background-color 0.15s ease-in;
@@ -62,17 +62,19 @@ input:hover, .drop-zone:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    gap: var(--spacing-5);
+    padding: var(--spacing-5) var(--spacing-2);
     border: 2px dashed hsl(var(--neutral-500));
-    border-radius: 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1.2;
     cursor: pointer;
 }
 
 .drop-zone__icon {
-    padding: 0.5rem;
+    padding: var(--spacing-1);
     border: 1px solid hsl(var(--neutral-500) / 0.4);
-    border-radius: 0.75rem;
+    border-radius: 12px;
     background-color: hsl(var(--neutral-700) / 0.4);
     transition: border-color 0.15s ease-in, background-color 0.15s ease-in, box-shadow 0.15s ease-in;
 }
@@ -84,12 +86,12 @@ input:hover, .drop-zone:hover {
 }
 
 .upload-icon {
-    width: 2rem;
+    width: 3.2rem;
     height: auto;
 }
 
 .drop-zone__content {
-    font-size: 1.125rem;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-primary-regular);
     color: hsl(var(--neutral-300));
 }
@@ -97,9 +99,9 @@ input:hover, .drop-zone:hover {
 .description {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    font-size: 0.75rem;
+    gap: var(--spacing-1);
+    margin-top: var(--spacing-2);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-primary-medium);
 }
 
@@ -121,10 +123,10 @@ input:hover, .drop-zone:hover {
 }
 
 .submit-btn {
-    padding: 1.125rem 0;
-    border-radius: 0.75rem;
+    padding: var(--spacing-3) 0;
+    border-radius: 12px;
     font-family: inherit;
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-primary-extrabold);
     cursor: pointer;
     color: hsl(var(--neutral-900));
@@ -142,6 +144,11 @@ input:hover, .drop-zone:hover {
     box-shadow: 0 0 hsl(var(--orange-500));
 }
 
+/*
+  ==============================
+  MEDIA QUERIES
+  ==============================
+*/
 @media (prefers-reduced-motion: reduce) {
     input, .drop-zone, .drop-zone__icon, .submit-btn {
         transition: none;
