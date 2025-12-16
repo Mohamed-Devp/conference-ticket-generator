@@ -35,6 +35,12 @@ html {
     margin: 0;
     padding: 0;
     border: initial;
+    outline: 2px solid transparent;
+    outline-offset: 4px;
+}
+
+*:focus-visible {
+    outline-color: hsl(var(--neutral-500));
 }
 
 *,

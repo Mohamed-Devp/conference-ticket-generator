@@ -47,10 +47,15 @@ input::placeholder {
     padding: 3rem 0;
 }
 
-.drop-zone, input {
+input, .drop-zone {
     margin-top: 1rem;
     background-color: hsl(var(--neutral-700) / 0.25);
     backdrop-filter: blur(2px);
+    transition: background-color 0.15s ease-in;
+}
+
+input:hover, .drop-zone:hover {
+    background-color: hsl(var(--neutral-700) / 0.65);
 }
 
 .drop-zone {
@@ -69,6 +74,13 @@ input::placeholder {
     border: 1px solid hsl(var(--neutral-500) / 0.4);
     border-radius: 0.75rem;
     background-color: hsl(var(--neutral-700) / 0.4);
+    transition: border-color 0.15s ease-in, background-color 0.15s ease-in, box-shadow 0.15s ease-in;
+}
+
+.drop-zone:hover .drop-zone__icon {
+    border-color: hsl(var(--neutral-300) / 0.6);
+    background-color: hsl(var(--neutral-700) / 0.8);
+    box-shadow: 0 2px hsl(var(--neutral-900) / 0.8);
 }
 
 .upload-icon {
@@ -117,4 +129,21 @@ input::placeholder {
     cursor: pointer;
     color: hsl(var(--neutral-900));
     background-color: hsl(var(--orange-500));
+    transition: transform 0.15s ease-in, background-color 0.15s ease-in, box-shadow 0.15s ease-in;
+}
+
+.submit-btn:hover {
+    background-color: hsl(var(--orange-700));
+    box-shadow: 0 4px hsl(var(--orange-500));
+}
+
+.submit-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 hsl(var(--orange-500));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    input, .drop-zone, .drop-zone__icon, .submit-btn {
+        transition: none;
+    }
 }
