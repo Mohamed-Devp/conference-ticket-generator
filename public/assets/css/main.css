@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    /* Colors */
+    --neutral-0: 0 0% 100%;
+    --neutral-300: 252 6% 83%;
+    --neutral-500: 245 15% 58%;
+    --neutral-700: 245 19% 35%;
+    --neutral-900: 248 70% 10%;
+
+    --orange-500: 7 88% 67%;
+    --orange-700: 7 71% 60%;
+
+    --text-gradient: linear-gradient(to right, hsl(7 68% 67%), hsl(0 0% 100%));
+
+    /* Typography */
+    --font-family-primary: "Inconsolata";
+
+    --font-size-heading-lg: 6.0rem;
+    --font-size-heading-sm: 4.0rem;
+
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.8rem;
+    --font-size-lg: 2.0rem;
+    --font-size-xl: 2.4rem;
+
+    --font-weight-primary-regular: 400;
+    --font-weight-primary-medium: 500;
+    --font-weight-primary-bold: 700;
+    --font-weight-primary-extrabold: 800;
+
+    /* Spacing */
+    --spacing-1: 0.8rem;
+    --spacing-2: 1.6rem;
+    --spacing-3: 1.8rem;
+    --spacing-4: 2.0rem;
+    --spacing-5: 2.4rem;
+    --spacing-6: 3.2rem;
+    --spacing-7: 4.8rem;
+    --spacing-8: 6.4rem;
+}
+
+/*
+  ==============================
+  RESET & BASE
+  ==============================
+*/
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: initial;
+    outline: 2px solid transparent;
+    outline-offset: 4px;
+}
+
+*:focus-visible {
+    outline-color: hsl(var(--neutral-500));
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding: var(--spacing-7) 0;
+    font-family: var(--font-family-primary);
+    background-image: url("../images/pattern-lines.svg"), url("../images/background-desktop.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    display: block;
+    object-fit: contain;
+}
+
+/*
+  ==============================
+  UTILITY STYLES
+  ==============================
+*/
+.visually-hidden { /* Hides the element visually */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: initial;
+    pointer-events: none;
+    clip-path: inset(100%);
+}
+
+/*
+  ==============================
+  BACKGROUND PATTERNS
+  ==============================
+*/
+.bg-pattern {
+    position: absolute;
+    z-index: -1;
+    object-fit: contain;
+}
+
+.bg-pattern--squiggly-line-top {
+    width: min(446px, 50vw);
+    right: 0;
+    top: 96px;
+}
+
+.bg-pattern--squiggly-line-bottom {
+    width: min(826px, 90vw);
+    left: 0;
+    bottom: 0;
+}
+
+.bg-pattern--circle-1 {
+    width: min(218px, 30vw);
+    left: 48px;
+    top: 0;
+    transform: translateY(-40%);
+}
+
+.bg-pattern--circle-2 {
+    width: min(218px, 30vw);
+    right: 25%;
+    bottom: 30%;
+}
+
+/*
+  ==============================
+  SITE HEADER
+  ==============================
+*/
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.site-header__heading {
+    width: min(83.2rem, 90vw);
+    margin-top: var(--spacing-8);
+    font-size: var(--font-size-heading-lg);
+    font-weight: var(--font-weight-primary-extrabold);
+    color: hsl(var(--neutral-0));
+}
+
+.site-header__content {
+    width: 90vw;
+    margin-top: var(--spacing-5);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-primary-medium);
+    color: hsl(var(--neutral-300));
+}
+
+/*
+  ==============================
+  MEDIA QUERIES
+  ==============================
+*/
+@media (max-width: 576px) {
+    .site-header__heading {
+        font-size: var(--font-size-heading-sm);
+    }
+
+    .site-header__content {
+        font-size: var(--font-size-lg);
+    }
+}

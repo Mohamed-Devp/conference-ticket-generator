@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="./home.css">
+
+    <title>Conference ticket generator</title>
+</head>
+<body>
+    <!-- BACKGROUND PATTERNS -->
+    <img class="bg-pattern bg-pattern--squiggly-line-top" src="../../assets/images/pattern-squiggly-line-top.svg" alt="">
+    <img class="bg-pattern bg-pattern--squiggly-line-bottom" src="../../assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-1" src="../../assets/images/pattern-circle.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-2" src="../../assets/images/pattern-circle.svg" alt="">
+
+    <header class="site-header">
+        <a href="/public/features/home/" aria-label="Homepage">
+            <img src="../../assets/images/logo-full.svg" alt="">
+        </a>
+        <h1 class="site-header__heading">Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p class="site-header__content">
+            Secure your spot at next year's biggest coding conference.
+        </p>
+    </header>
+
+    <main class="user-info-container">
+        <form class="user-info" method="post" novalidate>
+            <div class="avatar">
+                <label id="avatar-label" for="avatar">Upload Avatar</label>
+                <input 
+                    id="avatar"
+                    class="visually-hidden" 
+                    type="file"
+                    name="avatar"
+                    accept=".jpg, .jpeg, .png"
+                    required
+                    tabindex="-1"
+                />
+                <div class="drop-zone" role="button" tabindex="0" aria-labelledby="avatar-label" aria-describedby="avatar-description">
+                    <div class="drop-zone__icon">
+                        <img src="../../assets/images/icon-upload.svg" alt="">
+                    </div>
+                    <p class="drop-zone__content">Drag or drop or click to upload</p>
+                </div>
+                <div id="avatar-description" class="description description--info">
+                    <img class="description__icon-info" src="../../assets/images/icon-info.svg" alt="">
+                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <p class="description__content">
+                        Upload your photo (JPG or PNG, max size: 500KB)
+                    </p>
+                </div>
+            </div>
+            <div class="full-name">
+                <label for="full-name">Full Name</label>
+                <input
+                    id="full-name"
+                    type="text"
+                    name="full-name"
+                    maxlength="32"
+                    required
+                    aria-describedby="full-name-description"
+                />
+                <div id="full-name-description" class="description description--empty">
+                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <p class="description__content"></p>
+                </div>
+            </div>
+            <div class="email-address">
+                <label for="email-address">Email Address</label>
+                <input 
+                    id="email-address" 
+                    type="email"
+                    name="email-address"
+                    placeholder="email@exmaple.com"
+                    required
+                    aria-describedby="email-address-description"
+                />
+                <div id="email-address-description" class="description description--empty">
+                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <p class="description__content"></p>
+                </div>
+            </div>
+            <div class="github-username">
+                <label for="github-username">GitHub Username</label>
+                <input 
+                    id="github-username"
+                    type="text"
+                    name="github-username"
+                    placeholder="@yourusername"
+                    maxlength="39"
+                    required
+                    aria-describedby="github-username-description"
+                />
+                <div id="github-username-description" class="description description--empty">
+                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <p class="description__content"></p>
+                </div>
+            </div>
+            <button class="submit-btn" type="button">Generate My Ticket</button>
+        </form>
+    </main>
+    <script src="./home.js"></script>
+</body>
+</html>
