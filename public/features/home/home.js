@@ -27,6 +27,29 @@ dropZone.addEventListener('click', () => {
     avatarInput.click();
 });
 
+dropZone.addEventListener('dragenter', () => {
+    dropZone.classList.add('highlight');
+});
+
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+
+    const dataTransfer = e.dataTransfer;
+    handleFiles(dataTransfer.files);
+
+    dropZone.classList.remove('highlight');
+});
+
+dropZone.addEventListener('dragleave', (e) => {
+    if (!dropZone.contains(e.relatedTarget)) {
+        dropZone.classList.remove('highlight');
+    }
+});
+
 removeBtn.addEventListener('click', () => {
     dropZone.classList.remove('hidden');
     userAvatar.classList.add('hidden');
