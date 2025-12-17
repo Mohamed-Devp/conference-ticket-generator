@@ -15,7 +15,6 @@ input {
     padding: var(--spacing-3) var(--spacing-4);
     border: 2px solid hsl(var(--neutral-500));
     border-radius: 12px;
-    font-family: inherit;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-primary-regular);
     color: hsl(var(--neutral-300));
@@ -47,11 +46,18 @@ input::placeholder {
     padding: var(--spacing-7) 0;
 }
 
-input, .drop-zone {
+input, .drop-zone, .user-avatar {
     margin-top: var(--spacing-2);
     background-color: hsl(var(--neutral-700) / 0.25);
     backdrop-filter: blur(2px);
+}
+
+input, .drop-zone {
     transition: background-color 0.15s ease-in;
+}
+
+.drop-zone.hidden, .user-avatar.hidden {
+    display: none;
 }
 
 input:hover, .drop-zone:hover {
@@ -62,12 +68,10 @@ input:hover, .drop-zone:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-5);
-    padding: var(--spacing-5) var(--spacing-2);
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
     border: 2px dashed hsl(var(--neutral-500));
     border-radius: 12px;
-    text-align: center;
-    line-height: 1.2;
     cursor: pointer;
 }
 
@@ -85,15 +89,50 @@ input:hover, .drop-zone:hover {
     box-shadow: 0 2px hsl(var(--neutral-900) / 0.8);
 }
 
-.upload-icon {
-    width: 3.2rem;
-    height: auto;
-}
-
 .drop-zone__content {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-primary-regular);
+    line-height: 1.4;
+    text-align: center;
     color: hsl(var(--neutral-300));
+}
+
+.user-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    border: 2px dashed hsl(var(--neutral-500));
+    border-radius: 12px;
+}
+
+.user-avatar__img {
+    width: 4.8rem;
+    height: auto;
+    border: 1px solid hsl(var(--neutral-500));
+    border-radius: 12px;
+}
+
+.user-avatar__btns {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.user-avatar__btn {
+    padding: 0.5rem 1.0rem;
+    border-radius: 4px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-primary-medium);
+    color: hsl(var(--neutral-300));
+    background-color: hsl(var(--neutral-700) / 0.6);
+    cursor: pointer;
+    transition: background-color 0.15s ease-in;
+}
+
+.user-avatar__btn:hover {
+    background-color: hsl(var(--neutral-700) / 0.8);
 }
 
 .description {
@@ -125,7 +164,6 @@ input:hover, .drop-zone:hover {
 .submit-btn {
     padding: var(--spacing-3) 0;
     border-radius: 12px;
-    font-family: inherit;
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-primary-extrabold);
     cursor: pointer;
@@ -150,7 +188,7 @@ input:hover, .drop-zone:hover {
   ==============================
 */
 @media (prefers-reduced-motion: reduce) {
-    input, .drop-zone, .drop-zone__icon, .submit-btn {
+    input, .drop-zone, .drop-zone__icon, .user-avatar__btn, .submit-btn {
         transition: none;
     }
 }
