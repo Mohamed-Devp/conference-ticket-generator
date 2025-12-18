@@ -57,7 +57,7 @@
                 <div id="avatar-description" class="description description--info">
                     <img class="description__icon-info" src="../../assets/images/icon-info.svg" alt="">
                     <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
-                    <p class="description__content">
+                    <p class="description__content" data-default="Upload your photo (JPG or PNG, max size: 500KB)">
                         Upload your photo (JPG or PNG, max size: 500KB)
                     </p>
                 </div>
@@ -70,6 +70,7 @@
                     name="full-name"
                     maxlength="32"
                     required
+                    pattern="[\w\s]{1,32}"
                     aria-describedby="full-name-description"
                 />
                 <div id="full-name-description" class="description description--empty">
@@ -101,6 +102,7 @@
                     placeholder="@yourusername"
                     maxlength="39"
                     required
+                    pattern="@?[a-zA-Z0-9]([a-zA-Z0-9\-]{0,37}[a-zA-Z0-9])?"
                     aria-describedby="github-username-description"
                 />
                 <div id="github-username-description" class="description description--empty">
@@ -108,7 +110,7 @@
                     <p class="description__content"></p>
                 </div>
             </div>
-            <button class="submit-btn" type="button">Generate My Ticket</button>
+            <button class="submit-btn" type="submit">Generate My Ticket</button>
         </form>
     </main>
     <script src="./home.js"></script>
