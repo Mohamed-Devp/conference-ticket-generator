@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="./ticket.css">
+
+    <title>Conference ticket generator</title>
+</head>
+<body>
+    <!-- BACKGROUND PATTERNS -->
+    <img class="bg-pattern bg-pattern--squiggly-line-top" src="../../assets/images/pattern-squiggly-line-top.svg" alt="">
+    <img class="bg-pattern bg-pattern--squiggly-line-bottom" src="../../assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-1" src="../../assets/images/pattern-circle.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-2" src="../../assets/images/pattern-circle.svg" alt="">
+
+    <header class="site-header">
+        <a href="/public/features/home/" aria-label="Homepage">
+            <img src="../../assets/images/logo-full.svg" alt="">
+        </a>
+        <h1 class="site-header__heading">
+            Congrats <span id="header-full-name" class="site-header__full-name">Jonatan Kristof</span>! Your ticket
+            is ready.
+        </h1>
+        <p class="site-header__content">
+            We've emailed your ticket to <span id="email-address" class="site-header__email-address">jonatan@email.com</span>
+            and will send updates in the run up to the event.
+        </p>
+    </header>
+
+    <main class="card-container">
+        <div class="card" data-number="#01609">
+            <span class="visually-hidden">Ticket number: #01609</span>
+            <div class="conference">
+                <img class="conference__logo-mark" src="../../assets/images/logo-mark.svg" alt="">
+                <div>
+                    <p class="conference__logo">Coding Conf</p>
+                    <p class="conference__info">Jan 31, 2025 / Austin, TX</p>
+                </div>
+            </div>
+            <div class="user-info">
+                <img id="avatar" class="user-info__avatar" src="../../assets/images/image-avatar.jpg" alt="Your selected avatar">
+                <div>
+                    <p id="full-name" class="user-info__full-name">Jonatan Kristof</p>
+                    <div class="user-info__github-username">
+                        <img class="github-icon" src="../../assets/images/icon-github.svg" alt="Github">
+                        <span id="github-username">@jonatankristof0101</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./ticket.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+/*
+  ==============================
+  SITE HEADER
+  ==============================
+*/
+.site-header__full-name {
+    color: transparent;
+    background-image: var(--text-gradient);
+    background-clip: text;
+}
+
+.site-header__email-address {
+    color: hsl(var(--orange-500));
+}
+
+/*
+  ==============================
+  CARD
+  ==============================
+*/
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 12.8rem 0;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: min(60.0rem, 90vw);
+    padding: 2.4rem;
+    aspect-ratio: 15 / 7;
+    background-image: url("../../assets/images/pattern-ticket.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card::before {
+    content: attr(data-number);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 81%;
+    top: 50%;
+    width: 19%;
+    height: 100%;
+    writing-mode: vertical-lr;
+    transform: translateY(-50%);
+    font-size: 3.2rem;
+    font-weight: var(--font-weight-primary-medium);
+    text-wrap: nowrap;
+    color: hsl(var(--neutral-300) / .4);
+}
+
+.conference {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+}
+
+.conference__logo {
+    font-size: 3.6rem;
+    font-weight: var(--font-weight-primary-bold);
+    color: hsl(var(--neutral-0));
+}
+
+.conference__info {
+    margin-top: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-primary-regular);
+    color: hsl(var(--neutral-300));
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.user-info__avatar {
+    width: 7.2rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-info__full-name {
+    font-size: 2.8rem;
+    font-weight: var(--font-weight-primary-medium);
+    color: hsl(var(--neutral-0));
+}
+
+.user-info__github-username {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    margin-top: 1.2rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-primary-regular);
+    color: hsl(var(--neutral-300));
+}
+
+@media (max-width: 640px) {
+    .site-header__heading {
+        font-size: max(3.75rem, 9.375vw);
+    }
+
+    .site-header__content {
+        font-size: max(1.5rem, 3.75vw);
+    }
+
+    .card::before {
+        font-size: max(2.0rem, 5vw);
+    }
+
+    .conference__logo-mark {
+        width: max(2.5rem, 6.25vw);
+    }
+    
+    .conference__logo {
+        font-size: max(2.25rem, 5.625vw);
+    }
+
+    .conference__info {
+        font-size: max(1.125rem, 2.8125vw);
+    }
+
+    .user-info__avatar {
+        width: max(4.5rem, 11.25vw);
+    }
+
+    .user-info__full-name {
+        font-size: max(1.75rem, 4.375vw);
+    }
+
+    .github-icon {
+        width: max(1.6rem, 3.75vw);
+    }
+
+    .user-info__github-username {
+        font-size: max(1.125rem, 2.8125vw);
+    }
+}
+
+@media (max-width: 400px) {
+    .card-container {
+        padding: 9.6rem 0;
+    }
+
+    .card {
+        padding: 1.6rem;
+    }
+
+    .conference__info {
+        margin-top: 1.0rem;
+    }
+
+    .user-info__github-username {
+        margin-top: 0.6rem;
+    }
+}
