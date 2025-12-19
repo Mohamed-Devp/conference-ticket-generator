@@ -156,6 +156,6 @@ userInfoForm.addEventListener('submit', (e) => {
         }
 
         fileReader.readAsDataURL(avatarInput.files[0]);
-        window.location = '../ticket/ticket.html';
+        window.location = './public/features/ticket/ticket.html';
     }
 });
