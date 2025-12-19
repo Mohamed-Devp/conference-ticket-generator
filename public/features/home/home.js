@@ -1,4 +1,9 @@
+const userInfoForm = document.querySelector('.user-info');
+
 const avatarInput = document.getElementById('avatar');
+const fullNameInput = document.getElementById('full-name');
+const emailAddressInput = document.getElementById('email-address');
+const gitHubUsenameInput = document.getElementById('github-username');
 
 const dropZone = document.querySelector('.drop-zone');
 
@@ -8,19 +13,79 @@ const removeBtn = document.getElementById('remove-btn');
 const changeBtn = document.getElementById('change-btn');
 
 const validFileTypes = ['image/jpeg', 'image/png'];
+const maxFileSize = 500;
 
-function handleFiles(filesList) {
-    if (filesList.length && validFileTypes.includes(filesList[0].type)) {
-        dropZone.classList.add('hidden');
-        userAvatar.classList.remove('hidden');
+function showError(inputEl, descriptionEl, errorMessage) {
+    inputEl.setAttribute('aria-invalid', 'true');
 
-        const objectURL = URL.createObjectURL(filesList[0]);
-        userAvatarImg.src = objectURL;
+    const descriptionElSpan = descriptionEl.querySelector('.description__content');
+    descriptionElSpan.textContent = errorMessage;
+
+    descriptionEl.classList.remove('description--empty', 'description--info');
+    descriptionEl.classList.add('description--error');
+}
+
+function hideError(inputEl, descriptionEl) {
+    inputEl.removeAttribute('aria-invalid');
+
+    const descriptionElSpan = descriptionEl.querySelector('.description__content');
+    const defaultContent = descriptionElSpan.dataset.default;
+
+    descriptionEl.classList.remove('description--error');
+
+    if (defaultContent) {
+        descriptionEl.classList.add('description--info');
+        descriptionElSpan.textContent = defaultContent;
+    }
+    else {
+        descriptionEl.classList.add('description--empty');
+        descriptionElSpan.textContent = '';
     }
 }
 
-avatarInput.addEventListener('change', (e) => {
-    handleFiles(e.target.files);    
+function handleFiles(filesList) {
+    const avatarDescriptionEl = document.getElementById('avatar-description');
+
+    if (filesList.length) {
+        const selectedFile = filesList[0];
+        const selectedFileSize = selectedFile.size / 1024;
+
+        if (!validFileTypes.includes(selectedFile.type)) {
+            showError(avatarInput, avatarDescriptionEl, 'Please upload a valid photo. (PNG or JPG, max size: 500KB)');
+        }
+        else if (selectedFileSize > maxFileSize) {
+            showError(avatarInput, avatarDescriptionEl, 'File too large. Please upload a photo under 500KB.');
+        }
+        else {
+            hideError(avatarInput, avatarDescriptionEl);
+
+            dropZone.classList.add('hidden');
+            userAvatar.classList.remove('hidden');
+
+            const objectURL = URL.createObjectURL(selectedFile);
+            userAvatarImg.src = objectURL;
+
+            avatarInput.files = filesList;
+        }
+    }
+}
+
+function validateField(fieldName, inputEl, descriptionEl) {
+    const validityState = inputEl.validity;
+
+    if (validityState.valueMissing) {
+        showError(inputEl, descriptionEl, `${fieldName} is required.`);
+    }
+    else if (!validityState.valid || validityState.patternMismatch) {
+        showError(inputEl, descriptionEl, `Please enter a valid ${fieldName.toLowerCase()}.`);
+    }
+    else {
+        hideError(inputEl, descriptionEl);
+    }
+}
+
+avatarInput.addEventListener('change', () => {
+    handleFiles(avatarInput.files);    
 });
 
 dropZone.addEventListener('click', () => {
@@ -60,4 +125,37 @@ removeBtn.addEventListener('click', () => {
 
 changeBtn.addEventListener('click', () => {
     avatarInput.click();
+});
+
+userInfoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const avatarDescriptionEl = document.getElementById('avatar-description');
+    validateField('Avatar', avatarInput, avatarDescriptionEl);
+
+    const fullNameDescriptionEl = document.getElementById('full-name-description');
+    validateField('Full name', fullNameInput, fullNameDescriptionEl);
+
+    const emailAddressDescriptionEl = document.getElementById('email-address-description');
+    validateField('Email address', emailAddressInput, emailAddressDescriptionEl);
+
+    const gitHubUsernameDescriptionEl = document.getElementById('github-username-description');
+    validateField('GitHub username', gitHubUsenameInput, gitHubUsernameDescriptionEl);
+
+    if (userInfoForm.checkValidity()) {
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            const userInfoStr = JSON.stringify({
+                avatar: e.target.result,
+                fullName: fullNameInput.value,
+                emailAddress: emailAddressInput.value,
+                gitHubUsername: gitHubUsenameInput.value
+            });
+
+            window.localStorage.setItem('userInfo', userInfoStr);
+        }
+
+        fileReader.readAsDataURL(avatarInput.files[0]);
+        window.location = '../ticket/ticket.html';
+    }
 });
