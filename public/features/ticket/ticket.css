@@ -1,0 +1,104 @@
+/*
+  ==============================
+  SITE HEADER
+  ==============================
+*/
+.site-header__full-name {
+    color: transparent;
+    background-image: var(--text-gradient);
+    background-clip: text;
+}
+
+.site-header__email-address {
+    color: hsl(var(--orange-500));
+}
+
+/*
+  ==============================
+  CARD
+  ==============================
+*/
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 12.8rem 0;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60.0rem;
+    padding: 2.4rem;
+    aspect-ratio: 15 / 7;
+    background-image: url("../../assets/images/pattern-ticket.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card::before {
+    content: attr(data-ticket-number);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 81%;
+    top: 50%;
+    width: 19%;
+    height: 100%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 3.2rem;
+    font-weight: var(--font-weight-primary-medium);
+    text-wrap: nowrap;
+    color: hsl(var(--neutral-300) / .4);
+}
+
+.conference {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+}
+
+.conference__logo {
+    font-size: 3.6rem;
+    font-weight: var(--font-weight-primary-bold);
+    color: hsl(var(--neutral-0));
+}
+
+.conference__info {
+    margin-top: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-primary-regular);
+    color: hsl(var(--neutral-300));
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.user-info__avatar {
+    width: 7.2rem;
+    height: 7.2rem;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-info__full-name {
+    font-size: 2.8rem;
+    font-weight: var(--font-weight-primary-medium);
+    color: hsl(var(--neutral-0));
+}
+
+.user-info__github-username {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    margin-top: 1.2rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-primary-regular);
+    color: hsl(var(--neutral-300));
+}
