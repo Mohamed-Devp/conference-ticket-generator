@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60.0rem;
+    width: min(60.0rem, 90vw);
     padding: 2.4rem;
     aspect-ratio: 15 / 7;
     background-image: url("../../assets/images/pattern-ticket.svg");
@@ -39,7 +39,7 @@
 }
 
 .card::before {
-    content: attr(data-ticket-number);
+    content: attr(data-number);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -48,7 +48,8 @@
     top: 50%;
     width: 19%;
     height: 100%;
-    transform: translateY(-50%) rotate(90deg);
+    writing-mode: vertical-lr;
+    transform: translateY(-50%);
     font-size: 3.2rem;
     font-weight: var(--font-weight-primary-medium);
     text-wrap: nowrap;
@@ -82,7 +83,7 @@
 
 .user-info__avatar {
     width: 7.2rem;
-    height: 7.2rem;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -101,4 +102,64 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-primary-regular);
     color: hsl(var(--neutral-300));
+}
+
+@media (max-width: 640px) {
+    .site-header__heading {
+        font-size: max(3.75rem, 9.375vw);
+    }
+
+    .site-header__content {
+        font-size: max(1.5rem, 3.75vw);
+    }
+
+    .card::before {
+        font-size: max(2.0rem, 5vw);
+    }
+
+    .conference__logo-mark {
+        width: max(2.5rem, 6.25vw);
+    }
+    
+    .conference__logo {
+        font-size: max(2.25rem, 5.625vw);
+    }
+
+    .conference__info {
+        font-size: max(1.125rem, 2.8125vw);
+    }
+
+    .user-info__avatar {
+        width: max(4.5rem, 11.25vw);
+    }
+
+    .user-info__full-name {
+        font-size: max(1.75rem, 4.375vw);
+    }
+
+    .github-icon {
+        width: max(1.6rem, 3.75vw);
+    }
+
+    .user-info__github-username {
+        font-size: max(1.125rem, 2.8125vw);
+    }
+}
+
+@media (max-width: 400px) {
+    .card-container {
+        padding: 9.6rem 0;
+    }
+
+    .card {
+        padding: 1.6rem;
+    }
+
+    .conference__info {
+        margin-top: 1.0rem;
+    }
+
+    .user-info__github-username {
+        margin-top: 0.6rem;
+    }
 }

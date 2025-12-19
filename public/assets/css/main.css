@@ -167,18 +167,3 @@ input, button {
     line-height: 1.4;
     color: hsl(var(--neutral-300));
 }
-
-/*
-  ==============================
-  MEDIA QUERIES
-  ==============================
-*/
-@media (max-width: 576px) {
-    .site-header__heading {
-        font-size: var(--font-size-heading-sm);
-    }
-
-    .site-header__content {
-        font-size: var(--font-size-lg);
-    }
-}

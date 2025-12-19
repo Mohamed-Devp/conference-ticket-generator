@@ -197,3 +197,13 @@ input:hover, .drop-zone:hover {
         transition: none;
     }
 }
+
+@media (max-width: 640px) {
+    .site-header__heading {
+        font-size: max(3.75rem, 9.375vw);
+    }
+
+    .site-header__content {
+        font-size: max(1.5rem, 3.75vw);
+    }
+}
