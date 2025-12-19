@@ -141,4 +141,21 @@ userInfoForm.addEventListener('submit', (e) => {
 
     const gitHubUsernameDescriptionEl = document.getElementById('github-username-description');
     validateField('GitHub username', gitHubUsenameInput, gitHubUsernameDescriptionEl);
+
+    if (userInfoForm.checkValidity()) {
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            const userInfoStr = JSON.stringify({
+                avatar: e.target.result,
+                fullName: fullNameInput.value,
+                emailAddress: emailAddressInput.value,
+                gitHubUsername: gitHubUsenameInput.value
+            });
+
+            window.localStorage.setItem('userInfo', userInfoStr);
+        }
+
+        fileReader.readAsDataURL(avatarInput.files[0]);
+        window.location = '../ticket/ticket.html';
+    }
 });
