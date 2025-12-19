@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/images/favicon-32x32.png">
 
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./public/assets/css/main.css">
+    <link rel="stylesheet" href="./public/features/home/home.css">
 
     <title>Conference ticket generator</title>
 </head>
 <body>
     <!-- BACKGROUND PATTERNS -->
-    <img class="bg-pattern bg-pattern--squiggly-line-top" src="../../assets/images/pattern-squiggly-line-top.svg" alt="">
-    <img class="bg-pattern bg-pattern--squiggly-line-bottom" src="../../assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
-    <img class="bg-pattern bg-pattern--circle-1" src="../../assets/images/pattern-circle.svg" alt="">
-    <img class="bg-pattern bg-pattern--circle-2" src="../../assets/images/pattern-circle.svg" alt="">
+    <img class="bg-pattern bg-pattern--squiggly-line-top" src="./public/assets/images/pattern-squiggly-line-top.svg" alt="">
+    <img class="bg-pattern bg-pattern--squiggly-line-bottom" src="./public/assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-1" src="./public/assets/images/pattern-circle.svg" alt="">
+    <img class="bg-pattern bg-pattern--circle-2" src="./public/assets/images/pattern-circle.svg" alt="">
 
     <header class="site-header">
         <a href="/public/features/home/" aria-label="Homepage">
-            <img src="../../assets/images/logo-full.svg" alt="">
+            <img src="./public/assets/images/logo-full.svg" alt="">
         </a>
         <h1 class="site-header__heading">Your Journey to Coding Conf 2025 Starts Here!</h1>
         <p class="site-header__content">
@@ -43,20 +43,20 @@
                 />
                 <div class="drop-zone" role="button" tabindex="0" aria-labelledby="avatar-label" aria-describedby="avatar-description">
                     <div class="drop-zone__icon">
-                        <img src="../../assets/images/icon-upload.svg" alt="">
+                        <img src="./public/assets/images/icon-upload.svg" alt="">
                     </div>
                     <p class="drop-zone__content">Drag or drop or click to upload</p>
                 </div>
                 <div class="user-avatar hidden">
-                    <img id="user-avatar-img"  class="user-avatar__img" src="../../assets/images/image-avatar.jpg" alt="Selected avatar">
+                    <img id="user-avatar-img"  class="user-avatar__img" src="./public/assets/images/image-avatar.jpg" alt="Selected avatar">
                     <div class="user-avatar__btns">
                         <button id="remove-btn" class="user-avatar__btn" type="button">Remove image</button>
                         <button id="change-btn" class="user-avatar__btn" type="button">Change image</button>
                     </div>
                 </div>
                 <div id="avatar-description" class="description description--info">
-                    <img class="description__icon-info" src="../../assets/images/icon-info.svg" alt="">
-                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <img class="description__icon-info" src="./public/assets/images/icon-info.svg" alt="">
+                    <img class="description__icon-error" src="./public/assets/images/icon-error.svg" alt="">
                     <p class="description__content" data-default="Upload your photo (JPG or PNG, max size: 500KB)">
                         Upload your photo (JPG or PNG, max size: 500KB)
                     </p>
@@ -74,7 +74,7 @@
                     aria-describedby="full-name-description"
                 />
                 <div id="full-name-description" class="description description--empty">
-                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <img class="description__icon-error" src="./public/assets/images/icon-error.svg" alt="">
                     <p class="description__content"></p>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                     aria-describedby="email-address-description"
                 />
                 <div id="email-address-description" class="description description--empty">
-                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <img class="description__icon-error" src="./public/assets/images/icon-error.svg" alt="">
                     <p class="description__content"></p>
                 </div>
             </div>
@@ -106,13 +106,13 @@
                     aria-describedby="github-username-description"
                 />
                 <div id="github-username-description" class="description description--empty">
-                    <img class="description__icon-error" src="../../assets/images/icon-error.svg" alt="">
+                    <img class="description__icon-error" src="./public/assets/images/icon-error.svg" alt="">
                     <p class="description__content"></p>
                 </div>
             </div>
             <button class="submit-btn" type="submit">Generate My Ticket</button>
         </form>
     </main>
-    <script src="./home.js"></script>
+    <script src="./public/features/home/home.js"></script>
 </body>
 </html>
