@@ -10,8 +10,6 @@ This is a solution to the [Conference ticket generator challenge on Frontend Men
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
@@ -33,23 +31,21 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop preview screenshot](./public/assets/images/desktop_preview.png)
 
 ### Links
 
-- Solution URL: [here!](https://your-solution-url.com)
-- Live Site URL: [here!](https://your-live-site-url.com)
+- Solution URL: [here!](https://www.frontendmentor.io/solutions/accessible-and-responsive-coding-conference-ticket-generator-BjWAjHVGE1)
+- Live Site URL: [here!](https://mohamed-devp.github.io/conference-ticket-generator/)
 
 ## My process
 
 ### Built with
 
-
-### What I learned
-
-
-### Continued development
-
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Flexbox
+- JavaScript File API
 
 ## Author
 
